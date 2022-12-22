@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:moneymentor/add%20profilename%20screen/screen_profile.dart';
+import 'package:moneymentor/splashscreen/screen_splash.dart';
 
+const saveKey = "savekey";
 void main() {
   runApp(const MyApp());
 }
@@ -8,17 +9,13 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'MoneyMentor',
-      theme: ThemeData(
-       
-      ),
-    home: ScreenProfile(),
+      theme: ThemeData(),
+      home:const ScreenSplash(),
     );
   }
 }
-

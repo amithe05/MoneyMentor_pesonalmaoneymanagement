@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:moneymentor/main.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+import '../home screen/dash_screen.dart';
 
 class ScreenProfile extends StatelessWidget {
   ScreenProfile({Key? key}) : super(key: key);
@@ -19,7 +23,7 @@ class ScreenProfile extends StatelessWidget {
                   const Text(
                     "MoneyMentor",
                     style: TextStyle(
-                      color: Color.fromARGB(207, 6, 42, 245),
+                      color: Color.fromARGB(207, 78, 3, 251),
                       fontSize: 50,
                       fontWeight: FontWeight.bold,
                     ),
@@ -99,5 +103,22 @@ class ScreenProfile extends StatelessWidget {
     );
   }
 
-  checkLogin(context) {}
+  checkLogin(ctx) async {
+      final profilename = _textcontroller.text;
+    final _sharedprfns = await SharedPreferences.getInstance();
+    if (profilename.isNotEmpty) {
+      await _sharedprfns.setString(saveKey, profilename);
+
+      Navigator.of(ctx).pushReplacement(MaterialPageRoute(builder: (ctx1) {
+        return const ScreenDash();
+      }));
+    } else {
+      ScaffoldMessenger.of(ctx).showSnackBar(
+        const SnackBar(
+          content: Text('Please enter a name'),
+          backgroundColor: Color.fromARGB(255, 230, 23, 8),
+        ),
+      );
+    }
+  }
 }
