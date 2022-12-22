@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:moneymentor/profilename%20screen/screen_profile.dart';
+import 'package:moneymentor/screens/home%20screen/dash_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../home screen/dash_screen.dart';
-import '../main.dart';
+import '../../main.dart';
 import '../onboarding screen/onboard_screen.dart';
+import '../profilename screen/screen_profile.dart';
 
 class ScreenSplash extends StatefulWidget {
   const ScreenSplash({Key? key}) : super(key: key);
@@ -27,7 +27,7 @@ class _ScreenSplashState extends State<ScreenSplash> {
       body: Container(
         width: double.infinity,
         height: double.infinity,
-        color:Color.fromARGB(207, 78, 3, 251),
+        color:const Color.fromARGB(207, 78, 3, 251),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: const [
@@ -44,21 +44,25 @@ class _ScreenSplashState extends State<ScreenSplash> {
 
   void gotoonboard() async {
     await Future.delayed(const Duration(seconds: 3));
+    // ignore: use_build_context_synchronously
     Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (ctx) {
-      return const ScreenOnboard();
+      return ScreenOnboard();
     }));
   }
 
   void checkUserLoggedIn() async {
+    // ignore: no_leading_underscores_for_local_identifiers
     final _sharedprfns = await SharedPreferences.getInstance();
+    // ignore: no_leading_underscores_for_local_identifiers
     final _userLoggedIn = _sharedprfns.getString(saveKey);
 
     if (_userLoggedIn == null || _userLoggedIn.isEmpty) {
       gotoonboard();
     } else {
       await Future.delayed(const Duration(seconds: 3));
+      // ignore: use_build_context_synchronously
       Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (ctx) {
-        return  ScreenProfile();
+        return  ScreenDash();
       }));
     }
   }

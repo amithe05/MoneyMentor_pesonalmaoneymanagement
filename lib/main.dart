@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:moneymentor/splashscreen/screen_splash.dart';
+import 'package:moneymentor/screens/splashscreen/screen_splash.dart';
 
 const saveKey = "savekey";
 void main() {

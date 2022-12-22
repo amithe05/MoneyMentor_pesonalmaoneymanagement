@@ -28,12 +28,7 @@ class ScreenProfile extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   )
-                  // Image(
-                  //   width: MediaQuery.of(context).size.width * 0.6,
-                  //   image:
-                  //       // const AssetImage('assets/images/xpense-logo-color.png'),
-                  //   // width: 250,
-                  // ),
+                
                   ,
                   const SizedBox(
                     height: 40,
@@ -89,7 +84,7 @@ class ScreenProfile extends StatelessWidget {
                       },
                       style: ElevatedButton.styleFrom(
                           backgroundColor:
-                              const Color.fromARGB(207, 6, 42, 245),
+                              const Color.fromARGB(207, 78, 3, 251),
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(20)),
                           minimumSize: const Size(150, 40)),
@@ -105,6 +100,7 @@ class ScreenProfile extends StatelessWidget {
 
   checkLogin(ctx) async {
       final profilename = _textcontroller.text;
+    // ignore: no_leading_underscores_for_local_identifiers
     final _sharedprfns = await SharedPreferences.getInstance();
     if (profilename.isNotEmpty) {
       await _sharedprfns.setString(saveKey, profilename);
