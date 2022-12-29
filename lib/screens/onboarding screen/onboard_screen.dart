@@ -20,11 +20,11 @@ class ScreenOnboard extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(vertical: 80),
                 child: Column(
                   children: [
-                    // Image(
-                    //     width: MediaQuery.of(context).size.width * 0.8,
-                    //     image: const AssetImage(
-                    //       'assets/images/onboard screen one image.png',
-                    //     )),
+                    Image(
+                        width: MediaQuery.of(context).size.width * 0.8,
+                        image: const AssetImage(
+                          'assets/images/onboard screen one image.png',
+                        )),
                     Text(
                       'Save For Your \n Future !',
                       textAlign: TextAlign.center,
@@ -76,10 +76,10 @@ class ScreenOnboard extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(vertical: 80),
                 child: Column(
                   children: [
-                    // Image(
-                    //     width: MediaQuery.of(context).size.width * 0.8,
-                    //     image: const AssetImage(
-                    //         'assets/images/onboard screen 2.png')),
+                    Image(
+                        width: MediaQuery.of(context).size.width * 0.8,
+                        image: const AssetImage(
+                            'assets/images/onboard screen 2.png')),
                     Text(
                       'Analyze Your \n Spending',
                       textAlign: TextAlign.center,

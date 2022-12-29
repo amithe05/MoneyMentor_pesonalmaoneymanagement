@@ -3,6 +3,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:moneymentor/main.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../home screen/dash_screen.dart';
+
 
 class ScreenProfile extends StatelessWidget {
   ScreenProfile({Key? key}) : super(key: key);
@@ -67,7 +69,7 @@ class ScreenProfile extends StatelessWidget {
                     height: 70,
                     width: 320,
                     child: Text(
-                      'By clicking the submit button below, I hereby agree to and accept the following terms and conditions governing my use of xXpense app. I further reaffirm my acceptance of the general terms and conditions .',
+                      'By clicking the submit button below, I hereby agree to and accept the following terms and conditions governing my use of MoneyMentor app. I further reaffirm my acceptance of the general terms and conditions .',
                       style: TextStyle(
                           fontSize: 12,
                           color: Color.fromARGB(255, 109, 108, 108)),
@@ -104,9 +106,9 @@ class ScreenProfile extends StatelessWidget {
     if (profilename.isNotEmpty) {
       await _sharedprfns.setString(saveKey, profilename);
 
-      // Navigator.of(ctx).pushReplacement(MaterialPageRoute(builder: (ctx1) {
-      //   return const ScreenDash();
-      // }));
+      Navigator.of(ctx).pushReplacement(MaterialPageRoute(builder: (ctx1) {
+        return const ScreenDash();
+      }));
     } else {
       ScaffoldMessenger.of(ctx).showSnackBar(
         const SnackBar(

@@ -31,11 +31,7 @@ class _ScreenSplashState extends State<ScreenSplash> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: const [
-            // Image(
-            //   image: AssetImage('assets/images/xpense-logo-new.png'),
-            //   width: 280,
-            //   height: 280,
-            // ),
+            Text('MoneyMentor',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 30),)
           ],
         ),
       ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:hive_flutter/adapters.dart';
 import 'package:moneymentor/screens/settingscreen/widgets/my_theme.dart';
+import 'package:moneymentor/screens/settingscreen/widgets/theme_data.dart';
 import 'package:moneymentor/screens/splashscreen/screen_splash.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
@@ -50,7 +51,7 @@ class _MyAppState extends State<MyApp> {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
             title: 'MoneyMentor',
-            theme: ThemeData(),
+            theme:Styles.themeData(themechangeprovider.darkTheme, context),
             home: const ScreenSplash(),
           );
         })));

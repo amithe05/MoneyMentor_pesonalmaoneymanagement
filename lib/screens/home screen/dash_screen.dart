@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:moneymentor/screens/home%20screen/screen_home.dart';
 
 import '../add transaction/screen_transaction.dart';
+import '../all transaction screen/screen_all_transaction.dart';
+import '../settingscreen/screen_settings.dart';
+import '../statistics/screen_statistics.dart';
 
 
 class ScreenDash extends StatefulWidget {
@@ -19,10 +22,10 @@ class _ScreenDashState extends State<ScreenDash> {
     // ignore: no_leading_underscores_for_local_identifiers
     final _pages = [
       const ScreenHome(),
-      // const ScreenAllTransaction(),
+      const ScreenAllTransaction(),
       const ScreenAddTransaction(),
-      // const ScreenStatistics(),
-      // const ScreenSettings()
+      const ScreenStatistics(),
+      const ScreenSettings()
     ];
     return Scaffold(
       floatingActionButton: Padding(
@@ -35,9 +38,9 @@ class _ScreenDashState extends State<ScreenDash> {
               backgroundColor: const Color.fromARGB(207, 78, 3, 251),
               child: const Icon(Icons.add),
               onPressed: () {
-                // Navigator.of(context).push(MaterialPageRoute(builder: (ctx) {
-                //   return const ScreenAddTransaction();
-                // }));
+                Navigator.of(context).push(MaterialPageRoute(builder: (ctx) {
+                  return const ScreenAddTransaction();
+                }));
               },
             ),
           ),
