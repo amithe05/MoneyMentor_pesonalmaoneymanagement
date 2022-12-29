@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:moneymentor/screens/splashscreen/screen_splash.dart';
 
 const saveKey = "savekey";
+const themeKey = "themekey";
+
 void main() {
   runApp(const MyApp());
 }
