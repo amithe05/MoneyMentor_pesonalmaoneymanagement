@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../main.dart';
+import '../home screen/dash_screen.dart';
 import '../onboarding screen/onboard_screen.dart';
 
 
@@ -59,10 +60,10 @@ class _ScreenSplashState extends State<ScreenSplash> {
       gotoonboard();
     } else {
       await Future.delayed(const Duration(seconds: 3));
-      // ignore: use_build_context_synchronously
-      // Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (ctx) {
-      //   return  ScreenDash();
-      // }));
+      
+      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (ctx) {
+        return  ScreenDash();
+      }));
     }
   }
 }

@@ -4,7 +4,7 @@ import 'package:moneymentor/screens/settingscreen/widgets/notification_widget.da
 import 'package:moneymentor/screens/settingscreen/widgets/privacy_policy.dart';
 import 'package:moneymentor/screens/settingscreen/widgets/reset_pop.dart';
 import 'package:moneymentor/screens/settingscreen/widgets/setting_widget.dart';
-import 'package:timezone/browser.dart' as tz;
+import 'package:timezone/data/latest.dart' as tz;
 
 import 'package:url_launcher/url_launcher.dart';
 import '../home screen/dash_screen.dart';
@@ -22,7 +22,7 @@ class _ScreenSettingsState extends State<ScreenSettings> {
   @override
   void initState() {
     super.initState();
-    tz.initializeTimeZone();
+    tz.zinitializeTimeZones();
   }
 
   @override
@@ -106,8 +106,7 @@ class _ScreenSettingsState extends State<ScreenSettings> {
 
   sendMail() async {
     // ignore: deprecated_member_use
-    if (!await launch(
-        "")) {
+    if (!await launch("")) {
       throw 'could not launch';
     }
   }

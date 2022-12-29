@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
+
 import 'package:hive_flutter/adapters.dart';
 import 'package:moneymentor/screens/settingscreen/widgets/my_theme.dart';
 import 'package:moneymentor/screens/splashscreen/screen_splash.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
-import 'package:timezone/browser.dart' as tz;
+import 'package:timezone/data/latest.dart' as tz;
 
 const saveKey = "savekey";
 const themeKey = "themekey";
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  tz.initializeTimeZone();
+  tz.zinitializeTimeZones();
   final appdocumentdir = await getApplicationDocumentsDirectory();
   await Hive.initFlutter(appdocumentdir.path);
   await Hive.openBox('money');
