@@ -3,7 +3,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:moneymentor/main.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../home screen/dash_screen.dart';
 
 class ScreenProfile extends StatelessWidget {
   ScreenProfile({Key? key}) : super(key: key);
@@ -105,9 +104,9 @@ class ScreenProfile extends StatelessWidget {
     if (profilename.isNotEmpty) {
       await _sharedprfns.setString(saveKey, profilename);
 
-      Navigator.of(ctx).pushReplacement(MaterialPageRoute(builder: (ctx1) {
-        return const ScreenDash();
-      }));
+      // Navigator.of(ctx).pushReplacement(MaterialPageRoute(builder: (ctx1) {
+      //   return const ScreenDash();
+      // }));
     } else {
       ScaffoldMessenger.of(ctx).showSnackBar(
         const SnackBar(

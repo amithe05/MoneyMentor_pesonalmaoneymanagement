@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:moneymentor/screens/home%20screen/dash_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../main.dart';
@@ -61,9 +60,9 @@ class _ScreenSplashState extends State<ScreenSplash> {
     } else {
       await Future.delayed(const Duration(seconds: 3));
       // ignore: use_build_context_synchronously
-      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (ctx) {
-        return  ScreenDash();
-      }));
+      // Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (ctx) {
+      //   return  ScreenDash();
+      // }));
     }
   }
 }
