@@ -4,7 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../main.dart';
 import '../onboarding screen/onboard_screen.dart';
-import '../profilename screen/screen_profile.dart';
+
 
 class ScreenSplash extends StatefulWidget {
   const ScreenSplash({Key? key}) : super(key: key);
